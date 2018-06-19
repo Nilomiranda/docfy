@@ -5,5 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
   });
 
+  User.associate = (models) => {
+    User.hasMany(models.Project); // USUARIO pode ter muitos PROJETOS
+  };
+
   return User;
 };

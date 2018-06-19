@@ -1,13 +1,12 @@
 {% extends "layouts/header.njk" %}
-
 {% block main %}
-<section id="main">
-  <div class="container">
-    {% include "partials/protitle.njk" %}
-    <section id="content">
-      {% include "layouts/nav.njk" %}
-      {% block article %}{% endblock %}
-    </section>
-  </div>
-</section>
+  <section id="main">
+    <div class="container">
+      {% include "partials/protitle.njk" %}
+      <section id="content">
+        {% include "layouts/nav.njk" %}
+        {% block article %}{% endblock %}
+      </section>
+    </div>
+  </section>
 {% endblock %}

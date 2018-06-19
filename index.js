@@ -2,6 +2,7 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const routes = require('./app/routes');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -23,6 +24,7 @@ app.set('view engine', 'njk'); // configurando a view engine / -> nunjucks
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
 app.use(flash());
+app.use(methodOverride('_method'));
 
 app.use('/', routes);
 

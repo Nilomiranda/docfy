@@ -1,9 +1,12 @@
 <nav>
   <div class="sessions">
-    <a href="#">Geral</a>
-    <a href="#">Geral</a>
-    <a href="#">Geral</a>
-    <a href="#">Geral</a>
+    {% for project in projects %}
+      {% for category in categories %}
+        <a href="/dashboard/{{ userId }}/project/{{ project.id }}/{{ category.id }}">{{ category.name }}</a>
+      {% endfor %}
+    {% endfor %}
   </div>
-  <a href="#" class="btn">Nova secao</a>
+  {% for project in projects %}
+    <a href="/dashboard/{{ userId }}/project/{{ project.id }}/new/section" class="btn">Nova secao</a>
+  {% endfor %}
 </nav>

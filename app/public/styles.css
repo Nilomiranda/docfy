@@ -127,6 +127,11 @@ input:focus, textarea:focus {
   color: #FFF;
 }
 
+.wrapper #header a {
+  text-decoration: none;
+  color: #FFF;
+}
+
 .wrapper #header .container {
   display: flex;
   flex-direction: row;

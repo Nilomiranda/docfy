@@ -1,0 +1,12 @@
+{% extends "layouts/info.njk" %}
+{% block article %}
+  <article>
+    {% for project in projects %}
+      <form action="/dashboard/{{ userId }}/project/{{ project.id }}/new/section/submit" method="POST">
+        <input type="text" name="title" placeholder="Nome da secao...">
+        <textarea id="content" name="content" placeholder="Conteudo da secao..."></textarea>
+        <button type="submit" class="btn">Salvar</button>
+      </form>
+    {% endfor %}
+  </article>
+{% endblock %}

@@ -1,6 +1,14 @@
 <header>
-  <h2>Exemplo de projeto</h2>
+  <h2>
+    {% for project in projects %}
+      {{ project.name }}
+    {% endfor %}
+  </h2>
   <div class="addon">
-    <a href="#" class="btn btn-danger">Excluir projeto</a>
+    {% for project in projects %}
+      <form action="/dashboard/{{ userId }}/project/{{ project.id }}?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger">Excluir projeto</button>
+      </form>
+    {% endfor %}
   </div>
 </header>
