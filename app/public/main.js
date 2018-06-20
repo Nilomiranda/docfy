@@ -18,6 +18,7 @@ $(document).ready(function() {
       spellChecker: false,
       status: false,
     });
+    console.log('entrou no MDE')
     // simplemde.render();
   });
 
@@ -27,7 +28,10 @@ $(document).ready(function() {
   $('[data-modal-open]').click(function(event) {
     event.preventDefault();
 
+
+
     $($(this).data('modal-open')).addClass('active');
+    console.log('entrou no evento');
   });
 
   $('[data-modal-close]').click(function(event) {

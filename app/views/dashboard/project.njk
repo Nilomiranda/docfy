@@ -8,6 +8,17 @@
       </form>
     </div>
     <p>{{category.content}}</p>
+    <div id="create-section" class="modal">
+        <form class="modal-content" action="/dashboard/{{ userId }}/project/{{ project.id }}/new/section/submit" method="POST">
+          <!--<input type="text" name="title" placeholder="Nome da secao...">
+          <textarea id="content" name="content" placeholder="Conteudo da secao..."></textarea>
+          <button type="submit" class="btn">Salvar</button>-->
+            <input type="text" name="title" placeholder="Nome da secao...">
+            <textarea id="content" class="mde" name="content" placeholder="Conteudo da secao..."></textarea>
+            <button type="submit" class="btn">Salvar</button>
+            <a href="#" data-modal-close="#create-section">Cancelar</a>
+        </form>
+      </div>
   </article>
 {% endblock %}
 

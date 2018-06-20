@@ -407,7 +407,7 @@ input:focus, textarea:focus {
 
 .modal-content button {
   height: 50px;
-  line-height: 50px;
+  line-height: 25px;
   display: block;
   border-radius: 3px;
   background: #0AC699;
