@@ -3,12 +3,18 @@ const { Category, Project } = require('../models');
 module.exports = {
   async listCategories(req, res) {
     const { projectId, userId } = req.params;
+    let { categoryId } = req.params;
     const categories = await Category.findAll({
       where: { projectId },
     });
     const projects = await Project.findAll({ where: { id: projectId } });
+    if (!categoryId) {
+      categoryId = null;
+    }
+    console.log(categoryId);
     return res.render('dashboard/project', {
       categories,
+      categoryId,
       projects,
       userId,
       userName: req.session.user.name,
