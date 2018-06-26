@@ -367,7 +367,7 @@ input:focus, textarea:focus {
   bottom: 0;
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   transition: ease .2s;
@@ -375,6 +375,7 @@ input:focus, textarea:focus {
 }
 
 .modal.active {
+  display: flex;
   transform: translateY(0);
 }
 
