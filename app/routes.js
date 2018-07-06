@@ -65,4 +65,9 @@ routes.get('/dashboard/:userId/project/:projectId/new/section', categoryControll
  */
 routes.post('/dashboard/:userId/project/:projectId/new/section/submit', categoryController.saveCategory);
 
+/**
+ * apagar categoria
+ */
+routes.delete('/dashboard/:userId/project/:projectId/:categoryId/remove', categoryController.deleteCategory);
+
 module.exports = routes;

@@ -11,7 +11,6 @@ module.exports = {
     if (!categoryId) {
       categoryId = null;
     }
-    console.log(categoryId);
     return res.render('dashboard/project', {
       categories,
       categoryId,
@@ -54,5 +53,11 @@ module.exports = {
     const { projectId: ProjectId } = req.params;
     await Category.create({ name, content, ProjectId });
     return res.redirect('back');
+  },
+
+  async deleteCategory(req, res) {
+    const { categoryId } = req.params;
+    await Category.destroy({ where: { id: categoryId } });
+    res.redirect('..');
   },
 };

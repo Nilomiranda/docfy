@@ -3,28 +3,28 @@
   <article>
     <div class="project-header">
       <h1>{{ category.name }}</h1>
-      <form action="#" method="POST">
+      {% for project in projects %}
+      <form action="/dashboard/{{ userId }}/project/{{ project.id }}/{{ category.id }}/remove?_method=DELETE" method="POST">
         {% if categoryId === null %}
           <h3>
             Selecione uma categoria no menu ao lado para ver seus detalhes,
             ou clique em "Nova secao" para adicionar uma nova categoria
+            {{ categoryId }}
           </h3>
         {% else %}
-          <a href="">Remover secao</a>
+            <a href="javascript:{};" onclick="parentNode.submit();">Remover secao</a>
         {% endif %}
       </form>
+      {% endfor %}
     </div>
     <p>{{category.content}}</p>
     <div id="create-section" class="modal">
       {% for project in projects %}
         <form class="modal-content" action="/dashboard/{{ userId }}/project/{{ project.id }}/new/section/submit" method="POST">
-          <!--<input type="text" name="title" placeholder="Nome da secao...">
-          <textarea id="content" name="content" placeholder="Conteudo da secao..."></textarea>
-          <button type="submit" class="btn">Salvar</button>-->
-            <input type="text" name="title" placeholder="Nome da secao...">
-            <textarea id="content" class="mde" name="content" placeholder="Conteudo da secao..."></textarea>
-            <button type="submit" class="btn">Salvar</button>
-            <a href="#" data-modal-close="#create-section">Cancelar</a>
+          <input type="text" name="title" placeholder="Nome da secao...">
+          <textarea id="content" class="mde" name="content" placeholder="Conteudo da secao..."></textarea>
+          <button type="submit" class="btn">Salvar</button>
+          <a href="#" data-modal-close="#create-section">Cancelar</a>
         </form>
       {% endfor %}
       </div>
