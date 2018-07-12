@@ -16,7 +16,7 @@
       </form>
       {% endfor %}
     </div>
-    <p>{{category.content}}</p>
+    <p>{{category.formattedContent | safe }}</p>
     {% if categoryId !== null %}
       {% for project in projects %}
         <a data-modal-open="#edit-section" href="#" class="btn">Editar</a>
