@@ -9,7 +9,6 @@
           <h3>
             Selecione uma categoria no menu ao lado para ver seus detalhes,
             ou clique em "Nova secao" para adicionar uma nova categoria
-            {{ categoryId }}
           </h3>
         {% else %}
             <a href="javascript:{};" onclick="parentNode.submit();">Remover secao</a>
@@ -18,6 +17,11 @@
       {% endfor %}
     </div>
     <p>{{category.content}}</p>
+    {% if categoryId !== null %}
+      {% for project in projects %}
+        <a data-modal-open="#edit-section" href="#" class="btn">Editar</a>
+      {% endfor %}
+    {% endif %}
     <div id="create-section" class="modal">
       {% for project in projects %}
         <form class="modal-content" action="/dashboard/{{ userId }}/project/{{ project.id }}/new/section/submit" method="POST">
@@ -28,6 +32,16 @@
         </form>
       {% endfor %}
       </div>
+    <div id="edit-section" class="modal">
+      {% for project in projects %}
+        <form class="modal-content" action="/dashboard/{{ userId }}/project/{{ project.id }}/{{ category.id }}/update?_method=PUT" method="POST">
+            <input type="text" name="title" placeholder="Nome da secao..." value="{{ category.name }}">
+            <textarea id="content" class="mde" name="content" placeholder="Conteudo da secao...">{{category.content}}</textarea>
+            <button type="submit" class="btn">Salvar</button>
+            <a href="#" data-modal-close="#edit-section">Cancelar</a>
+        </form>
+      {% endfor %}
+    </div>
   </article>
 {% endblock %}
 

@@ -66,6 +66,11 @@ routes.get('/dashboard/:userId/project/:projectId/new/section', categoryControll
 routes.post('/dashboard/:userId/project/:projectId/new/section/submit', categoryController.saveCategory);
 
 /**
+ * editar categoria selecionada
+ */
+routes.put('/dashboard/:userId/project/:projectId/:categoryId/update', categoryController.editCategory);
+
+/**
  * apagar categoria
  */
 routes.delete('/dashboard/:userId/project/:projectId/:categoryId/remove', categoryController.deleteCategory);

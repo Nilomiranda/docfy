@@ -60,4 +60,12 @@ module.exports = {
     await Category.destroy({ where: { id: categoryId } });
     res.redirect('..');
   },
+
+  async editCategory(req, res) {
+    const { categoryId } = req.params;
+    const { title: name, content } = req.body;
+    const currentCategory = await Category.findById(categoryId);
+    await currentCategory.update({ name, content });
+    return res.redirect('back');
+  },
 };
