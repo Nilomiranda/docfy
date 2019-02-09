@@ -4,4 +4,5 @@ module.exports = {
   database: 'Docfy',
   host: '127.0.0.1',
   dialect: 'mysql',
+  port: '3303',
 };

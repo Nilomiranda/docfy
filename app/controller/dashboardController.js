@@ -12,7 +12,6 @@ module.exports = {
         userId: req.session.user.id,
       },
     });
-    console.log('A LISTA DE PROJETOS ESTA AQUI', projects.rows);
     if (projects.rows.length === 0) {
       projects.rows = null;
     }

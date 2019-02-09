@@ -3,10 +3,10 @@
   <section id="main">
     <div class="container">
       <header>
-        <h2>Meus projetos ({{ projectCount }})</h2>
+        <h2>My projects ({{ projectCount }})</h2>
         <div class="addon">
           <form action="/dashboard/newproject" method="POST">
-            <input type="text" name="name" placeholder="Novo projeto..." required>
+            <input type="text" name="name" placeholder="New project..." required>
             <button type="submit" class="btn">
               <img src="/img/plus.svg">
             </button>
@@ -20,8 +20,7 @@
               <a href="/dashboard/{{ userId }}/project/{{ project.id }}">{{ project.name }}</a>
             {% endfor %}
           {% else %}
-            <h3>Voce nao tem nenhum projeto adicionado, comece adicionando um projeto
-                escolhendo um nome e clicando em "+"</h3>
+            <h3>You don't have any project. Start by creating a new project clicking in "+"</h3>
           {% endif %}
         </div>
       </section>

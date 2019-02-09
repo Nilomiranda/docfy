@@ -7,7 +7,7 @@
   <div class="addon">
     {% for project in projects %}
       <form action="/dashboard/{{ userId }}/project/{{ project.id }}?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-danger">Excluir projeto</button>
+        <button type="submit" class="btn btn-danger">Delete project</button>
       </form>
     {% endfor %}
   </div>

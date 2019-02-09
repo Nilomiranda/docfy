@@ -14,7 +14,7 @@ module.exports = {
     const { email } = req.body;
 
     if (await User.findOne({ where: { email } })) {
-      req.flash('error', 'Usuario ja cadastrado');
+      req.flash('error', 'User already registerd ');
       return res.redirect('back');
     }
 
@@ -22,7 +22,7 @@ module.exports = {
 
     await User.create({ ...req.body, password });
 
-    req.flash('success', 'Usuario cadastrado com sucesso');
+    req.flash('success', 'User successfully registered');
     return res.redirect('/');
   },
 
@@ -36,7 +36,7 @@ module.exports = {
       * se usuario for undefined, invertemos a logica para entrar ness condicao
       * e manter o usuario na tela de login
       */
-      req.flash('error', 'Usuario nao existente');
+      req.flash('error', 'User doesn\'t exist');
       return res.redirect('/');
     }
 
@@ -46,7 +46,7 @@ module.exports = {
       * se a senha estiver incorreta, invertemos a logica para entrar ness condicao
       * e manter o usuario na tela de login
       */
-      req.flash('error', 'Senha incorreta');
+      req.flash('error', 'Wrong password');
       return res.redirect('/');
     }
 
