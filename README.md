@@ -33,7 +33,7 @@ Before continuing, make sure to create a **new database** called *Docfy* with en
 
 We are almost there, all you need to do now is, in your terminal, run `./node_modules/.bin/sequelize db:migrate`. By running this command, sequelize CLI will run all the pending migrations that will create and configure all the tables you'll need to use this project.
 
-##Going live 🚀🚀🚀🚀🚀
+## Going live 🚀🚀🚀🚀🚀
 
 After successfully installing the dependencies run `npm start` to start the development server. Now you'll be able to go to your web browser and go to `localhost:3000` to see the project live.
 
